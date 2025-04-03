@@ -11,7 +11,7 @@ export function AnimatedTitle({ text, className = '' }: AnimatedTitleProps) {
   const [isHovered, setIsHovered] = useState(false);
   
   // Base brightness for desktop
-  const BASE_OPACITY = 0.7;
+  const BASE_OPACITY = 1.0;
   // Higher contrast for mobile display
   const MOBILE_OPACITY = 0.8;
 
