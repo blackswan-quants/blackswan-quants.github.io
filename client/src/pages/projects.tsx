@@ -1,7 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
 import { ProjectCard } from "@/components/project-card";
 import { type Project } from "@shared/schema";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { projects as staticProjects } from "@/data/static-data";
 
 const container = {
   hidden: { opacity: 0 },
@@ -19,9 +20,18 @@ const item = {
 };
 
 export default function Projects() {
-  const { data: projects, isLoading } = useQuery<Project[]>({
-    queryKey: ["/api/projects"],
-  });
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading to maintain the same user experience
+    const timer = setTimeout(() => {
+      setProjects(staticProjects);
+      setIsLoading(false);
+    }, 800);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen bg-zinc-950 fixed inset-0 overflow-hidden">
@@ -62,7 +72,7 @@ export default function Projects() {
               animate="show"
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {projects?.map((project, index) => (
+              {projects.map((project) => (
                 <motion.div key={project.id} variants={item}>
                   <ProjectCard project={project} />
                 </motion.div>

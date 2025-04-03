@@ -145,7 +145,7 @@
   letter-spacing: -2px;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   position: relative;
   text-align: center;
   display: block;
@@ -176,13 +176,13 @@
   
   /* Create the masking effect for the glow area */
   -webkit-mask-image: radial-gradient(
-    circle 150px at var(--glowX, 50%) var(--glowY, 50%),
+    circle 100px at var(--glowX, 50%) var(--glowY, 50%),
     black 0%,
     black 20%,
     transparent 70%
   );
   mask-image: radial-gradient(
-    circle 150px at var(--glowX, 50%) var(--glowY, 50%),
+    circle 100px at var(--glowX, 50%) var(--glowY, 50%),
     black 0%,
     black 20%,
     transparent 70%
