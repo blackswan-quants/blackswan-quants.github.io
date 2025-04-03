@@ -1,0 +1,130 @@
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { LineChart, ArrowUpDown, Brain, Network, Shield } from 'lucide-react';
+
+const WhatWeDo = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const projects = [
+    {
+      icon: LineChart,
+      title: "Save hours on every pull request",
+      description: "Our algorithmic trading systems automate complex trading strategies, reducing manual intervention and improving efficiency.",
+      gradient: "bg-gradient-to-br from-purple-900/30 via-purple-800/20 to-transparent"
+    },
+    {
+      icon: Brain,
+      title: "Turn comments into suggested changes",
+      description: "Machine learning models analyze market data and automatically suggest optimal trading positions.",
+      gradient: "bg-gradient-to-br from-blue-900/30 via-blue-800/20 to-transparent"
+    },
+    {
+      icon: Network,
+      title: "Detailed PR descriptions in seconds",
+      description: "High-frequency trading systems execute trades in microseconds, capitalizing on market inefficiencies.",
+      gradient: "bg-gradient-to-br from-green-900/30 via-green-800/20 to-transparent"
+    },
+    {
+      icon: ArrowUpDown,
+      title: "From failures to fixes",
+      description: "Advanced risk management systems automatically identify and mitigate potential trading risks.",
+      gradient: "bg-gradient-to-br from-yellow-900/30 via-yellow-800/20 to-transparent"
+    },
+    {
+      icon: Shield,
+      title: "Automatically split large PRs",
+      description: "Portfolio optimization algorithms automatically balance risk and return across multiple assets.",
+      gradient: "bg-gradient-to-br from-red-900/30 via-red-800/20 to-transparent"
+    }
+  ];
+
+  return (
+    <section 
+      ref={containerRef} 
+      className="h-[400vh] relative"
+    >
+      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full h-full flex items-center px-4">
+          <div className="w-full flex gap-16">
+            {/* Left side: Square preview area */}
+            <div className="flex-1 aspect-square relative rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/10">
+              {/* Background blur effects */}
+              {projects.map((project, index) => (
+                <motion.div
+                  key={`bg-${project.title}`}
+                  className={`absolute inset-0 ${project.gradient}`}
+                  style={{
+                    opacity: useTransform(
+                      scrollYProgress,
+                      [
+                        Math.max(0, index * 0.2 - 0.1),
+                        index * 0.2,
+                        (index + 1) * 0.2,
+                        Math.min(1, (index + 1) * 0.2 + 0.1)
+                      ],
+                      [0, 1, 1, 0]
+                    ),
+                  }}
+                />
+              ))}
+
+              {/* Content preview */}
+              <div className="absolute inset-0 p-8">
+                <div className="w-full h-full rounded-lg border border-white/10 bg-black/30 backdrop-blur-sm p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="h-6 w-6 rounded-full bg-white/10" />
+                    <div className="h-4 w-32 rounded bg-white/10" />
+                  </div>
+                  <div className="space-y-3">
+                    <div className="h-4 w-full rounded bg-white/10" />
+                    <div className="h-4 w-3/4 rounded bg-white/10" />
+                    <div className="h-4 w-5/6 rounded bg-white/10" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side: Content */}
+            <div className="flex-1 relative">
+              <div className="space-y-24">
+                {projects.map((project, index) => {
+                  const progress = useTransform(
+                    scrollYProgress,
+                    [
+                      Math.max(0, index * 0.2 - 0.1),
+                      index * 0.2,
+                      (index + 1) * 0.2,
+                      Math.min(1, (index + 1) * 0.2 + 0.1)
+                    ],
+                    [0.3, 1, 1, 0.3]
+                  );
+
+                  return (
+                    <motion.div
+                      key={project.title}
+                      style={{
+                        opacity: progress,
+                      }}
+                      className="relative"
+                    >
+                      <h3 className="text-2xl font-light text-gray-400 hover:text-white transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-gray-500">{project.description}</p>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WhatWeDo;

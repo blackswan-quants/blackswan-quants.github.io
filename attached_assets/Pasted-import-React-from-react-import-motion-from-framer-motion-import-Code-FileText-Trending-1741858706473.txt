@@ -1,0 +1,87 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Code, FileText, TrendingUp } from 'lucide-react';
+
+const Team = () => {
+  const features = [
+    {
+      icon: TrendingUp,
+      title: "Learn from trends and insights on X",
+      description: "Stay ahead of market movements with real-time analytics and predictive modeling.",
+      gradient: "from-blue-500/20 via-blue-500/5 to-transparent"
+    },
+    {
+      icon: FileText,
+      title: "Summarize documents",
+      description: "Transform complex financial documents into actionable insights within seconds.",
+      gradient: "from-purple-500/20 via-purple-500/5 to-transparent"
+    },
+    {
+      icon: Code,
+      title: "Your coding sidekick",
+      description: "Automate trading strategies with intelligent code suggestions and optimization.",
+      gradient: "from-green-500/20 via-green-500/5 to-transparent"
+    }
+  ];
+
+  return (
+    <section className="min-h-screen bg-black relative flex items-center justify-center p-8">
+      {/* Background grid with blur */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black_40%,transparent_100%)]" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header with glitch effect */}
+        <div className="text-center mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl font-light mb-4"
+          >
+            Productivity,{' '}
+            <span className="relative inline-block">
+              <span className="glitch-text">unhinged</span>
+              <span className="absolute top-0 left-0 -z-10 text-red-500 glitch-layer-1">unhinged</span>
+              <span className="absolute top-0 left-0 -z-20 text-blue-500 glitch-layer-2">unhinged</span>
+            </span>
+          </motion.h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Harness the power of AI to revolutionize your quantitative trading strategies
+          </p>
+        </div>
+
+        {/* Three-column layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              className="relative group"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-b ${feature.gradient} rounded-2xl blur-xl transition-opacity duration-500 opacity-0 group-hover:opacity-100`} />
+              
+              <div className="relative bg-[#121212] rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-colors duration-300 hover:border-white/20">
+                <feature.icon className="w-12 h-12 mb-6 text-white/80" />
+                <h3 className="text-xl font-light mb-4 text-white">{feature.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="mt-8 px-6 py-2 bg-[#333333] text-white rounded-lg hover:bg-[#404040] transition-colors duration-200"
+                >
+                  Learn More
+                </motion.button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Team;

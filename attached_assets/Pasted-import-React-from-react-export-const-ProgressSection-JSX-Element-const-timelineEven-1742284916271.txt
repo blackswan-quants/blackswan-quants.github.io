@@ -1,0 +1,77 @@
+import React from "react";
+
+export const ProgressSection = (): JSX.Element => {
+  const timelineEvents = [
+    {
+      date: "JUL 2024",
+      x: "106",
+    },
+    {
+      date: "OCT 2024",
+      x: "318",
+    },
+    {
+      date: "JAN 2025",
+      x: "586",
+      current: true,
+      title: "Grok 3",
+      description: "We released our latest Grok-3 models with reasoning and DeepSearch.",
+    },
+  ];
+
+  return (
+    <section className="w-full py-24 px-8 bg-zinc-950">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="flex justify-between mb-24">
+          <h2 className="text-[80px] leading-[1] font-medium text-zinc-200">
+            Our path of progress
+          </h2>
+          <p className="max-w-[540px] text-[22px] leading-[1.4] text-cyan-400">
+            We're moving toward a future where we will harness our cluster's full power to solve
+            intractable problems. What's seemingly impossible question you'd answer for humanity?
+          </p>
+        </div>
+
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-0 right-0 h-px bg-zinc-800" />
+
+          {/* Timeline events */}
+          {timelineEvents.map((event, index) => (
+            <div
+              key={index}
+              className="absolute"
+              style={{ left: `${event.x}px` }}
+            >
+              {/* Date */}
+              <div className="absolute -top-12 text-[13px] text-zinc-600">
+                {event.date}
+              </div>
+
+              {/* Dot */}
+              <div
+                className={`w-2 h-2 rounded-full -translate-x-1 -translate-y-1 ${
+                  event.current
+                    ? "bg-orange-500 ring-4 ring-orange-500/20"
+                    : "bg-zinc-600"
+                }`}
+              />
+
+              {/* Event content */}
+              {event.current && (
+                <div className="mt-8">
+                  <h3 className="text-[22px] font-medium text-zinc-200 mb-2">
+                    {event.title}
+                  </h3>
+                  <p className="text-zinc-600 max-w-[300px]">
+                    {event.description}
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
