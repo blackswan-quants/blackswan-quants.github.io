@@ -1,6 +1,6 @@
 import { EventCard } from "@/components/event-card";
 import { PageTransition } from "@/components/page-transition";
-import { type Event } from "@shared/schema";
+import { type Event } from "@/types";
 import { ProgressSection } from "@/components/progress-section";
 import { useState, useEffect } from "react";
 import { events as staticEvents } from "@/data/static-data";
@@ -15,7 +15,7 @@ export default function Events() {
       setEvents(staticEvents);
       setIsLoading(false);
     }, 800);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -35,8 +35,8 @@ export default function Events() {
             {isLoading ? (
               <div className="space-y-3 md:space-y-4">
                 {[...Array(2)].map((_, i) => (
-                  <div 
-                    key={i} 
+                  <div
+                    key={i}
                     className="h-16 bg-zinc-900/30 rounded-lg"
                   />
                 ))}

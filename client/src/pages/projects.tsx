@@ -1,5 +1,5 @@
 import { ProjectCard } from "@/components/project-card";
-import { type Project } from "@shared/schema";
+import { type Project } from "@/types";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { projects as staticProjects } from "@/data/static-data";
@@ -24,19 +24,14 @@ export default function Projects() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading to maintain the same user experience
-    const timer = setTimeout(() => {
-      setProjects(staticProjects);
-      setIsLoading(false);
-    }, 800);
-    
-    return () => clearTimeout(timer);
+    setProjects(staticProjects);
+    setIsLoading(false);
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-950 fixed inset-0 overflow-hidden">
-      <div className="container mx-auto px-4 h-[calc(100vh-3rem)] flex flex-col pt-12">
-        <motion.h1 
+    <div className="min-h-screen bg-zinc-950">
+      <div className="container mx-auto px-4 py-12 flex flex-col">
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -45,18 +40,18 @@ export default function Projects() {
           Our Projects
         </motion.h1>
 
-        <div className="flex-1 overflow-y-auto pr-2">
+        <div className="flex-1 pr-2">
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ 
+                  animate={{
                     opacity: [0.5, 1, 0.5],
                     scale: [0.9, 1, 0.9]
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 2,
                     repeat: Infinity,
                     delay: i * 0.2
@@ -66,7 +61,7 @@ export default function Projects() {
               ))}
             </div>
           ) : (
-            <motion.div 
+            <motion.div
               variants={container}
               initial="hidden"
               animate="show"
