@@ -2,7 +2,7 @@ export const sponsorsData = [
   {
     name: "Jane Street",
     logo: "sponsors_logo/jane_street_logo.svg",
-    description: "Global quantitative asset management firm providing resources, competitions, and career opportunities for our members.",
+    description: "Jane Street is a global quantitative trading firm hiring smart, humble people who love to learn.",
     website: "https://www.janestreet.com/",
     linkedin: "https://www.linkedin.com/company/jane-street-global/",
     color: "text-purple-400",
