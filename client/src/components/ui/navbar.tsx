@@ -58,6 +58,9 @@ export function Navbar() {
           <Link href="/events">
             <div className="text-sm text-zinc-400 hover:text-white transition-colors">Events</div>
           </Link>
+          <Link href="/partners">
+            <div className="text-sm text-zinc-400 hover:text-white transition-colors">Partners</div>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -101,6 +104,9 @@ export function Navbar() {
                   </Link>
                   <Link href="/events">
                     <div className="block py-2 text-lg text-zinc-400 hover:text-white transition-colors">Events</div>
+                  </Link>
+                  <Link href="/partners">
+                    <div className="block py-2 text-lg text-zinc-400 hover:text-white transition-colors">Partners</div>
                   </Link>
                 </div>
               </div>

@@ -5,6 +5,7 @@ import WhatWeDo from "@/components/what-we-do";
 import Team from "@/components/team";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { sponsorsData } from "@/data/partners-data";
 
 export default function Home() {
   return (
@@ -120,6 +121,44 @@ export default function Home() {
       </section>
 
       <Team />
+
+      {/* Sponsors Section */}
+      <section className="py-24 relative z-10 border-t border-white/5 bg-black/20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold mb-12 text-white/90">
+              Our Sponsors
+            </h2>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+              {sponsorsData.map((sponsor, index) => (
+                <motion.a
+                  key={sponsor.name}
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative group"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <div className="w-48 h-24 md:w-60 md:h-32 flex items-center justify-center p-4 bg-white/5 rounded-xl border border-white/10 group-hover:border-purple-500/30 transition-colors duration-300">
+                    <img 
+                      src={sponsor.logo} 
+                      alt={sponsor.name} 
+                      className="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
