@@ -7,6 +7,7 @@ import Projects from "@/pages/projects";
 import Events from "@/pages/events";
 import About from "@/pages/about";
 import Partners from "@/pages/partners";
+import ScrollToTop from "@/components/scroll-to-top";
 
 function Router() {
   return (
@@ -24,6 +25,7 @@ function Router() {
 function App() {
   return (
     <div className="min-h-screen bg-zinc-950">
+      <ScrollToTop />
       <Navbar />
       <Router />
       <footer className="py-4 text-center text-zinc-600 text-sm border-t border-zinc-800/50">
