@@ -11,7 +11,7 @@ export const sponsorsData = [
 ];
 
 export const partnersData = [
-  /*{
+  {
     name: "Lead The Future",
     logo: "sponsors_logo/LTF_logo.svg",
     description: "Leading mentorship nonprofit connecting top STEM students with mentors from world-class tech companies and research institutions.",
@@ -19,7 +19,7 @@ export const partnersData = [
     instagram: "https://www.instagram.com/leadthefuture_mentorship/",
     color: "text-blue-400",
     borderColor: "hover:border-blue-500/50"
-  },*/
+  },
   {
     name: "PoliMI Data Scientists",
     logo: "sponsors_logo/PMDS_logo.svg",
