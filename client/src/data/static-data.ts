@@ -8,8 +8,7 @@ export const projects: Project[] = [
     description: "Analyzing the impact of FED's speeches on the Stock Market using Financial BERT",
     githubUrl: "https://github.com/quantfin-sfpolimi/cb-impact-nlps",
     imageUrl: "",
-    isComingSoon: false,
-    createdAt: new Date()
+    isComingSoon: false
   },
   {
     id: 2,
@@ -17,8 +16,7 @@ export const projects: Project[] = [
     description: "A Comprehensive Study using Time Series Analysis and Clustering Techniques",
     githubUrl: "https://github.com/quantfin-sfpolimi/dtwclustering_sp500",
     imageUrl: "",
-    isComingSoon: false,
-    createdAt: new Date()
+    isComingSoon: false
   },
   {
     id: 3,
@@ -26,8 +24,7 @@ export const projects: Project[] = [
     description: "Relating Correlations and Granger Causality-driven Models for LSTM-based Stock Forecasting",
     githubUrl: "https://github.com/quantfin-sfpolimi/nasdaq_causal-analysis_lstm",
     imageUrl: "",
-    isComingSoon: false,
-    createdAt: new Date()
+    isComingSoon: false
   },
   {
     id: 4,
@@ -35,8 +32,7 @@ export const projects: Project[] = [
     description: "Advanced reinforcement learning strategies for algorithmic trading in financial markets",
     githubUrl: "",
     imageUrl: "",
-    isComingSoon: true,
-    createdAt: new Date()
+    isComingSoon: true
   },
   {
     id: 5,
@@ -44,8 +40,7 @@ export const projects: Project[] = [
     description: "An exploration of option pricing models using Fourier transforms for enhanced speed and accuracy.",
     githubUrl: "https://github.com/blackswan-quants/FourierOptionPricing",
     imageUrl: "",
-    isComingSoon: false,
-    createdAt: new Date()
+    isComingSoon: false
   },
   {
     id: 6,
@@ -53,8 +48,7 @@ export const projects: Project[] = [
     description: "Analysis of the Hurst exponent to detect mean-reverting and trending patterns, and developing pullback trading strategies.",
     githubUrl: "https://github.com/blackswan-quants/hurst-pullback",
     imageUrl: "",
-    isComingSoon: false,
-    createdAt: new Date()
+    isComingSoon: false
   },
   {
     id: 7,
@@ -62,8 +56,7 @@ export const projects: Project[] = [
     description: "Using Hidden Markov Models to identify different market regimes and build adaptive trading algorithms.",
     githubUrl: "https://github.com/blackswan-quants/marketregime_hmm",
     imageUrl: "",
-    isComingSoon: false,
-    createdAt: new Date()
+    isComingSoon: false
   },
   {
     id: 8,
@@ -71,13 +64,12 @@ export const projects: Project[] = [
     description: "Research and backtesting of high-frequency momentum strategies on intraday market data.",
     githubUrl: "https://github.com/blackswan-quants/intraday-momentum",
     imageUrl: "",
-    isComingSoon: false,
-    createdAt: new Date()
+    isComingSoon: false
   }
 ];
 
 // Static events data
-export const events = [
+export const events: Event[] = [
   {
     id: 6,
     title: "Talk with HPC Engineer",
@@ -85,9 +77,7 @@ export const events = [
     date: "December 2025",
     imageUrl: "events_images/event6.webp",
     instagramPostUrl: "https://www.instagram.com/p/DSE7xUXjGSC",
-    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_quantfinance-hpc-citadelsecurities-activity-7404444554978095104-IE6m?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEoZJlEBBEytPUiG26hgG5mevzVgfnxj42E",
-    isComingSoon: false,
-    createdAt: new Date()
+    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_quantfinance-hpc-citadelsecurities-activity-7404444554978095104-IE6m?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEoZJlEBBEytPUiG26hgG5mevzVgfnxj42E"
   },
   {
     id: 5,
@@ -96,9 +86,7 @@ export const events = [
     date: "December 2025",
     imageUrl: "events_images/event5.webp",
     instagramPostUrl: "https://www.instagram.com/p/DSaaoWnjHhX",
-    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_%F0%9D%97%A6%F0%9D%97%BA%F0%9D%97%AE%F0%9D%97%B9%F0%9D%97%B9%F0%9D%97%A7%F0%9D%97%AE%F0%9D%97%B9%F0%9D%97%B8%F0%9D%98%80-%F0%9D%97%A7%F0%9D%97%B5%F0%9D%97%B2-%F0%9D%97%A4%F0%9D%98%82%F0%9D%97%AE%F0%9D%97%BB-activity-7407469297712709633-ndh1",
-    isComingSoon: false,
-    createdAt: new Date()
+    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_%F0%9D%97%A6%F0%9D%97%BA%F0%9D%97%AE%F0%9D%97%B9%F0%9D%97%B9%F0%9D%97%A7%F0%9D%97%AE%F0%9D%97%B9%F0%9D%97%B8%F0%9D%98%80-%F0%9D%97%A7%F0%9D%97%B5%F0%9D%97%B2-%F0%9D%97%A4%F0%9D%98%82%F0%9D%97%AE%F0%9D%97%BB-activity-7407469297712709633-ndh1"
   },
   {
     id: 4,
@@ -107,9 +95,7 @@ export const events = [
     date: "October 2025",
     imageUrl: "events_images/event4.webp",
     instagramPostUrl: "https://www.instagram.com/p/DPB_ZeDjKw7",
-    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_quantitativeresearch-squarepoint-blackswansquants-activity-7377008699057405952-XBYt",
-    isComingSoon: false,
-    createdAt: new Date()
+    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_quantitativeresearch-squarepoint-blackswansquants-activity-7377008699057405952-XBYt"
   },
   {
     id: 3,
@@ -118,9 +104,7 @@ export const events = [
     date: "May 2025",
     imageUrl: "events_images/event3.webp",
     instagramPostUrl: "https://www.instagram.com/p/DLu6SO1o6QX",
-    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_hacking-in-milan-with-gdg-on-may-10-activity-7347304456666894337-zWE1",
-    isComingSoon: false,
-    createdAt: new Date()
+    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_hacking-in-milan-with-gdg-on-may-10-activity-7347304456666894337-zWE1"
   },
   {
     id: 2,
@@ -129,9 +113,7 @@ export const events = [
     date: "May 2025",
     imageUrl: "events_images/event2.webp",
     instagramPostUrl: "https://www.instagram.com/p/DLFOP_ooGih",
-    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_inside-citi-italy-future-of-finance-activity-7341434805441429504-gXRT",
-    isComingSoon: false,
-    createdAt: new Date()
+    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_inside-citi-italy-future-of-finance-activity-7341434805441429504-gXRT"
   },
   {
     id: 1,
@@ -140,9 +122,7 @@ export const events = [
     date: "March 2025",
     imageUrl: "events_images/event1.webp",
     instagramPostUrl: "https://www.instagram.com/p/DHmBG6bolpL",
-    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_starthack2025-activity-7309580067389542400-lEH7",
-    isComingSoon: false,
-    createdAt: new Date()
+    linkedinPostUrl: "https://www.linkedin.com/posts/blackswan-quants_starthack2025-activity-7309580067389542400-lEH7"
   },
   {
     id: 0,
@@ -151,25 +131,6 @@ export const events = [
     date: "October 2024",
     imageUrl: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f",
     instagramPostUrl: "https://www.instagram.com/blackswan_quants/",
-    linkedinPostUrl: "https://www.linkedin.com/company/blackswan-quants",
-    isComingSoon: false,
-    createdAt: new Date()
+    linkedinPostUrl: "https://www.linkedin.com/company/blackswan-quants"
   }
 ];
-
-// Helper functions to mimic API calls
-export const getProjects = (): Promise<Project[]> => {
-  return Promise.resolve(projects);
-};
-
-export const getProject = (id: number): Promise<Project | undefined> => {
-  return Promise.resolve(projects.find(project => project.id === id));
-};
-
-export const getEvents = (): Promise<Event[]> => {
-  return Promise.resolve(events as Event[]);
-};
-
-export const getEvent = (id: number): Promise<Event | undefined> => {
-  return Promise.resolve((events as Event[]).find(event => event.id === id));
-};

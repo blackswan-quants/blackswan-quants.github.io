@@ -7,8 +7,7 @@ export const projectSchema = z.object({
   description: z.string(),
   githubUrl: z.string(),
   imageUrl: z.string(),
-  isComingSoon: z.boolean().default(false),
-  createdAt: z.date().optional()
+  isComingSoon: z.boolean().default(false)
 });
 
 export type Project = z.infer<typeof projectSchema>;
@@ -20,8 +19,8 @@ export const eventSchema = z.object({
   description: z.string(),
   date: z.string(),
   imageUrl: z.string(),
-  isComingSoon: z.boolean().default(false),
-  createdAt: z.date().optional()
+  instagramPostUrl: z.string().optional(),
+  linkedinPostUrl: z.string().optional()
 });
 
 export type Event = z.infer<typeof eventSchema>;
