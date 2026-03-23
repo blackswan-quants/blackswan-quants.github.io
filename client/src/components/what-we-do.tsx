@@ -1,19 +1,13 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { LineChart, ArrowUpDown, Brain, Network } from 'lucide-react';
 
 const WhatWeDo = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  const projects = [
+  const features = [
     {
       icon: LineChart,
       title: "A common goal",
-      description: "At BlackSwanQuants, we bridge finance, technology, and quantitative research to develop cutting-edge projects at the intersection of machine learning and quantitative finance.",
+      description: "We bridge finance, technology, and quantitative research to develop cutting-edge projects at the intersection of machine learning and quantitative finance.",
     },
     {
       icon: Brain,
@@ -33,41 +27,29 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section 
-      ref={containerRef} 
-      className="h-[150vh] sm:h-[200vh] relative" 
-    >
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="max-w-3xl mx-auto w-full px-4">
-          <div className="space-y-12 sm:space-y-16"> 
-            {projects.map((project, index) => {
-              const progress = useTransform(
-                scrollYProgress,
-                [
-                  Math.max(0, index * 0.2 - 0.1),
-                  index * 0.2,
-                  (index + 1) * 0.2,
-                  Math.min(1, (index + 1) * 0.2 + 0.1)
-                ],
-                [0.3, 1, 1, 0.3]
-              );
-
-              return (
-                <motion.div
-                  key={project.title}
-                  style={{
-                    opacity: progress,
-                  }}
-                  className="relative"
-                >
-                  <h3 className="text-lg sm:text-xl font-light text-gray-400 hover:text-white transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-500">{project.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
+    <section className="relative pb-32">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 flex flex-col items-start text-left"
+            >
+              <div className="p-3 mb-4 rounded-lg bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20">
+                <feature.icon className="w-8 h-8 text-purple-300" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

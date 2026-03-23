@@ -1,82 +1,72 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, FileText, TrendingUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { projects } from '@/data/static-data';
+import { Link } from 'wouter';
+import { Button } from './ui/button';
 
-const Team = () => {
-  const features = [
-    {
-      icon: TrendingUp,
-      title: "Statistical Learning Applied to the S&P500.",
-      description: " A Comparative Study of Euclidean Distance k-Means and DTW-Based Hierarchical Clustering for Stock Grouping in the S&P 500",
-      gradient: "from-blue-500/20 via-blue-500/5 to-transparent"
-    },
-    {
-      icon: FileText,
-      title: "Correlation-based  prediction in the NASDAQ",
-      description: " Rolling Correlations and Granger Causality-Driven LSTM Modeling for Stock Market Prediction: A Study of NASDAQ Interdependencies.",
-      gradient: "from-purple-500/20 via-purple-500/5 to-transparent"
-    },
-    {
-      icon: Code,
-      title: " Effect of FED on the market",
-      description: "Analyzing the Impact of FED Speeches on the Stock Market: A Sentiment Analysis Approach Using Financial BERT",
-      gradient: "from-green-500/20 via-green-500/5 to-transparent"
-    }
-  ];
+const FeaturedProjects = () => {
+  // Take the first 3 non-coming-soon projects
+  const featuredProjects = projects.filter(p => !p.isComingSoon).slice(0, 3);
 
   return (
-    <section className="min-h-screen bg-zinc-950 relative flex items-center justify-center p-8">
+    <section className="py-32 bg-zinc-950 relative p-8">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl font-light mb-4"
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-white"
           >
-            Quantitative Finance & ML,{' '}
-            <span className="relative inline-block">
-              <span className="text-purple-400">unhinged</span>
-            </span>
+            From Theory to <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Practice</span>
           </motion.h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            We empower the next 
-            generation of quants to decode 
-            uncertainty and transform data 
-            into financial intelligence
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-zinc-400 text-lg max-w-2xl mx-auto"
+          >
+            Explore some of our latest research and development projects in quantitative finance.
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {featuredProjects.map((project, index) => (
             <motion.div
-              key={feature.title}
+              key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="relative group cursor-pointer"
-              onClick={() => {
-                window.location.href = '/projects';
-              }}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+              className="relative group flex flex-col"
             >
-              <div className={`absolute inset-0 bg-gradient-to-b ${feature.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl`} />
-              <div 
-                className="relative bg-zinc-950 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-colors duration-300 hover:border-white/20 cursor-pointer"
-                onClick={() => {
-                  window.location.href = '/projects';
-                }}
+              <div className="absolute -inset-px bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg" />
+              <a 
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative bg-zinc-900/80 rounded-2xl p-8 border border-zinc-800 backdrop-blur-sm transition-all duration-300 hover:border-zinc-700 hover:-translate-y-1 h-full flex flex-col"
               >
-                <feature.icon className="w-12 h-12 mb-6 text-white/80" />
-                <h3 className="text-xl font-light mb-4 text-white">{feature.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
-              </div>
+                <h3 className="text-xl font-semibold mb-3 text-white">{project.title}</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed flex-grow">{project.description}</p>
+              </a>
             </motion.div>
           ))}
+        </div>
+
+        <div className="text-center mt-20">
+          <Link href="/projects">
+            <Button className="bg-white text-black hover:bg-zinc-200 rounded-full px-8 h-12 text-base font-medium transition-all hover:scale-105">
+              View All Projects <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
   );
 };
 
-export default Team;
+export default FeaturedProjects;

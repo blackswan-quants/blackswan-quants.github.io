@@ -2,7 +2,7 @@ import { AnimatedTitle } from "@/components/animated-title";
 import { motion } from 'framer-motion';
 import React from 'react';
 import WhatWeDo from "@/components/what-we-do";
-import Team from "@/components/team";
+import FeaturedProjects from "@/components/team";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { sponsorsData } from "@/data/partners-data";
@@ -10,27 +10,13 @@ import { sponsorsData } from "@/data/partners-data";
 export default function Home() {
   return (
     <div className="min-h-screen pt-16 relative">
-      {/* Large Fixed Logo Background */}
-      <div 
-        className="fixed inset-0 z-0 opacity-[0.03]"
-        style={{
-          backgroundImage: 'url(/logobig.png)',
-          backgroundSize: '80% auto',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-          mixBlendMode: 'soft-light',
-          filter: 'brightness(1.3) contrast(1.2)'
-        }}
-      />
-      
       {/* Hero Section */}
       <section className="min-h-[80vh] flex flex-col justify-center items-center relative z-10 px-4">
         <div className="container mx-auto px-4 text-center">
           {/* Desktop Version */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.2 }}
+            initial={{ opacity: 0.2 }}
+            animate={{ opacity: 0.5 }}
             transition={{ duration: 1.2 }}
             className="hidden md:block"
           >
@@ -46,9 +32,9 @@ export default function Home() {
           >
             <motion.h1 
               className="text-4xl font-bold mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.2 }}
-              transition={{ delay: 0.3, duration: 1 }}
+              initial={{ opacity: 0.2 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
             >
               BlackswanQuants
             </motion.h1>
@@ -74,32 +60,33 @@ export default function Home() {
       </section>
 
       {/* Simple Text Section */}
-      <section className="py-32 md:py-40 relative z-10">
+      <section className="py-32 md:py-40 relative z-10 bg-zinc-950/50 border-y border-zinc-800/50">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
           >
             <motion.p 
-              className="text-lg sm:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed"
+              className="text-2xl md:text-3xl font-light max-w-4xl mx-auto text-zinc-200 leading-relaxed"
             >
               We are a team of university students united by a passion for quantitative finance and machine learning, collaborating on innovative projects, competitions, and events to gain valuable experience and insights.
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.8 }}
               className="mt-8"
             >
               <Link href="/about">
                 <Button 
                   variant="ghost" 
-                  className="text-gray-400 hover:text-white transition-colors border border-gray-800 hover:border-purple-500/30"
+                  className="text-zinc-300 hover:text-white transition-all duration-300 border border-zinc-700 hover:border-purple-500/30 hover:bg-zinc-900 px-6 py-3 text-base"
                 >
-                  Read More
+                  Learn more about us
                 </Button>
               </Link>
             </motion.div>
@@ -110,17 +97,18 @@ export default function Home() {
       {/* Skills Section (What We Do) */}
       <section className="relative z-10">
         <motion.h2 
-          className="text-2xl sm:text-3xl font-bold text-center mb-10"
+          className="text-4xl md:text-5xl font-bold text-center mb-20 tracking-tight text-white pt-32"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          How we innovate
+          How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Innovate</span>
         </motion.h2>
         <WhatWeDo />
       </section>
 
-      <Team />
+      <FeaturedProjects />
 
       {/* Sponsors Section */}
       <section className="py-24 relative z-10 border-t border-white/5 bg-black/20">

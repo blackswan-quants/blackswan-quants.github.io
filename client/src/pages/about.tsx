@@ -1,169 +1,149 @@
 import { motion } from "framer-motion";
 import { PageTransition } from "@/components/page-transition";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Instagram, X } from "lucide-react";
-
-const codeSnippets = [
-  {
-    language: "python",
-    code: `class BlackSwanAnalyzer:
-    def __init__(self):
-        self.volatility_threshold = 0.42  # The answer to markets
-        self.constants = [3.14159, 2.71828, 1.618]  # π, e, φ
-        
-    def predict_anomaly(self, data: pd.DataFrame) -> dict:
-        """
-        Identifies market anomalies through statistical patterns
-        """
-        if self.detect_volatility_spike(data):
-            return {
-                "anomaly": True,
-                "confidence": 0.05,
-                "action": "Hedge positions"
-            }`
-  },
-  {
-    language: "python",
-    code: `class BlackSwanDetector:
-    def __init__(self, sensitivity: float = 0.95):
-        self.sensitivity = sensitivity
-
-    def detect_anomalies(self, 
-                        time_series: np.ndarray) -> List[int]:
-        """
-        Detect potential black swan events
-        """
-        return self._analyze_patterns(time_series)`
-  }
-];
+import { Linkedin, Instagram, Github, Users, Target, Code, BrainCircuit } from "lucide-react";
 
 export default function About() {
   return (
     <PageTransition>
-      <div className="min-h-screen bg-zinc-950 fixed inset-0 pt-12">
-        <div className="container mx-auto px-4 h-[calc(100vh-3rem)] overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start h-full py-8">
-            {/* Text Section */}
-            <div className="space-y-6">
-              <motion.h1 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-4xl font-bold mb-8"
-              >
-                About Blackswan Quants
-              </motion.h1>
-
-              <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="text-xl text-zinc-300 leading-relaxed"
-              >
-                At Blackswan Quants, we create cutting-edge projects at the intersection of quantitative finance and machine learning.
-              </motion.p>
-
-              <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="text-zinc-400 leading-relaxed"
-              >
-                Our unique SWAN framework empowers the next generation of quants to decode uncertainty and transform data into actionable financial intelligence.
-              </motion.p>
-
-              <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-zinc-400 leading-relaxed"
-              >
-                By combining advanced mathematics, agile development methodologies, and rigorous programming, we deliver robust solutions designed to navigate market complexity and leverage financial opportunities with precision and confidence.
-              </motion.p>
-
-              {/* Social Links */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex gap-4 pt-6"
-              >
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-zinc-900 hover:bg-zinc-800 relative overflow-hidden group"
-                    onClick={() => window.open('https://github.com/blackswan-quants', '_blank')}
-                  >
-                    <div className="absolute inset-0 bg-purple-500/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    <Github className="w-5 h-5 relative z-10" />
-                    <span className="sr-only">GitHub</span>
-                  </Button>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-zinc-900 hover:bg-zinc-800 relative overflow-hidden group"
-                    onClick={() => window.open('https://www.linkedin.com/company/blackswan-quants/posts/?feedView=all', '_blank')}
-                  >
-                    <div className="absolute inset-0 bg-purple-500/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    <Linkedin className="w-5 h-5 relative z-10" />
-                    <span className="sr-only">LinkedIn</span>
-                  </Button>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-zinc-900 hover:bg-zinc-800 relative overflow-hidden group"
-                    onClick={() => window.open('https://www.instagram.com/blackswan_quants/', '_blank')}
-                  >
-                    <div className="absolute inset-0 bg-purple-500/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    <Instagram className="w-5 h-5 relative z-10" />
-                    <span className="sr-only">Instagram</span>
-                  </Button>
-                </motion.div>
-              </motion.div>
-            </div>
-
-            {/* Animated Code Section */}
-            <div className="h-full overflow-y-auto pr-4">
-              {codeSnippets.map((snippet, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + index * 0.2 }}
-                  className="mb-6"
-                >
-                  <div className="bg-black/50 rounded-lg p-4 font-mono text-sm relative overflow-hidden border border-zinc-800">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-transparent opacity-50" />
-                    <pre className="relative z-10">
-                      <code className="text-zinc-300">
-                        {snippet.code}
-                      </code>
-                    </pre>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          {/* Taleb Quote Section */}
+      <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-20">
+        <div className="container mx-auto px-4">
+          
+          {/* Header Section */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="mt-16 max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
           >
-            <div className="relative">
-              <img 
-                src="/attached_assets/taleb.jpg" 
-                alt="Black Swan Quote" 
-                className="w-full h-auto object-cover" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 mix-blend-overlay" />
-            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Community</span>
+            </h1>
+            <p className="text-zinc-400 text-lg max-w-3xl mx-auto leading-relaxed">
+              We are a vibrant team of university students united by a passion for quantitative finance and machine learning. We thrive on collaboration, innovation, and continuous learning.
+            </p>
           </motion.div>
+
+          {/* Core Values / Mission Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+            {[
+              { icon: Users, title: "Collaboration", description: "Fostering a team environment where ideas flourish and knowledge is shared openly." },
+              { icon: BrainCircuit, title: "Innovation", description: "Applying advanced mathematics and ML to solve complex financial challenges." },
+              { icon: Code, title: "Excellence", description: "Delivering robust, high-quality solutions through rigorous programming and agile methods." },
+              { icon: Target, title: "Impact", description: "Decoding market uncertainty to transform data into actionable financial intelligence." }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 text-center"
+              >
+                <div className="inline-block p-3 mb-4 rounded-lg bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20">
+                  <item.icon className="w-8 h-8 text-purple-300" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-zinc-400 text-sm">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Social Feeds Section */}
+          <div className="text-center mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4"
+            >
+              Follow Our Journey
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-zinc-400 max-w-2xl mx-auto"
+            >
+              Stay updated with our latest projects, events, and insights directly from our social channels.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
+            {/* LinkedIn Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-zinc-900 rounded-xl md:rounded-2xl p-4 md:p-8 border border-zinc-800 flex flex-row md:flex-col items-center text-left md:text-center"
+            >
+              <Linkedin className="w-8 h-8 md:w-12 md:h-12 text-blue-400 md:mb-4 shrink-0" />
+              <div className="flex-1 px-4 md:px-0 md:w-full">
+                <h3 className="text-lg md:text-2xl font-bold text-white md:mb-2">LinkedIn</h3>
+                <p className="hidden md:block text-zinc-400 mb-6">
+                  Follow us for professional insights, event announcements, and deep dives into our quantitative research.
+                </p>
+              </div>
+              <Button
+                className="shrink-0 md:mt-auto bg-blue-500/10 text-blue-300 border border-blue-500/20 hover:bg-blue-500/20 hover:text-blue-200 transition-colors"
+                onClick={() => window.open('https://www.linkedin.com/company/blackswan-quants', '_blank')}
+              >
+                <span className="hidden md:inline">View on LinkedIn</span>
+                <span className="md:hidden">View</span>
+              </Button>
+            </motion.div>
+            
+            {/* Instagram Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-zinc-900 rounded-xl md:rounded-2xl p-4 md:p-8 border border-zinc-800 flex flex-row md:flex-col items-center text-left md:text-center"
+            >
+              <Instagram className="w-8 h-8 md:w-12 md:h-12 text-pink-400 md:mb-4 shrink-0" />
+              <div className="flex-1 px-4 md:px-0 md:w-full">
+                <h3 className="text-lg md:text-2xl font-bold text-white md:mb-2">Instagram</h3>
+                <p className="hidden md:block text-zinc-400 mb-6">
+                  Get a behind-the-scenes look at our team, our culture, and the daily life of the BlackSwan Quants community.
+                </p>
+              </div>
+              <Button
+                className="shrink-0 md:mt-auto bg-pink-500/10 text-pink-300 border border-pink-500/20 hover:bg-pink-500/20 hover:text-pink-200 transition-colors"
+                onClick={() => window.open('https://www.instagram.com/blackswan_quants/', '_blank')}
+              >
+                <span className="hidden md:inline">Follow on Instagram</span>
+                <span className="md:hidden">Follow</span>
+              </Button>
+            </motion.div>
+
+            {/* GitHub Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-zinc-900 rounded-xl md:rounded-2xl p-4 md:p-8 border border-zinc-800 flex flex-row md:flex-col items-center text-left md:text-center"
+            >
+              <Github className="w-8 h-8 md:w-12 md:h-12 text-purple-400 md:mb-4 shrink-0" />
+              <div className="flex-1 px-4 md:px-0 md:w-full">
+                <h3 className="text-lg md:text-2xl font-bold text-white md:mb-2">GitHub</h3>
+                <p className="hidden md:block text-zinc-400 mb-6">
+                  Explore our open-source repositories, quantitative models, and technical projects.
+                </p>
+              </div>
+              <Button
+                className="shrink-0 md:mt-auto bg-purple-500/10 text-purple-300 border border-purple-500/20 hover:bg-purple-500/20 hover:text-purple-200 transition-colors"
+                onClick={() => window.open('https://github.com/orgs/blackswan-quants/', '_blank')}
+              >
+                <span className="hidden md:inline">View on GitHub</span>
+                <span className="md:hidden">View</span>
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </div>
     </PageTransition>

@@ -28,40 +28,38 @@ export default function Projects() {
     const timer = setTimeout(() => {
       setProjects(staticProjects);
       setIsLoading(false);
-    }, 800);
+    }, 0);
     
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-950 fixed inset-0 overflow-hidden">
-      <div className="container mx-auto px-4 h-[calc(100vh-3rem)] flex flex-col pt-12">
-        <motion.h1 
+    <div className="min-h-screen bg-zinc-950 pt-24 pb-20">
+      <div className="container mx-auto px-4">
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-2xl sm:text-4xl font-bold mb-6"
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-6xl font-bold text-white mb-16 text-center tracking-tight"
         >
-          Our Projects
+          Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Projects</span>
         </motion.h1>
 
-        <div className="flex-1 overflow-y-auto pr-2">
+        <div className="w-full">
           {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[...Array(6)].map((_, i) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[...Array(8)].map((_, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ 
-                    opacity: [0.5, 1, 0.5],
-                    scale: [0.9, 1, 0.9]
-                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: [0.4, 0.7, 0.4] }}
                   transition={{ 
-                    duration: 2,
+                    duration: 0.2,
                     repeat: Infinity,
-                    delay: i * 0.2
+                    delay: i * 0.1,
+                    ease: "easeInOut"
                   }}
-                  className="h-[300px] bg-[#121212] rounded-xl border border-white/10"
+                  className="h-[150px] md:h-[300px] bg-[#121212] rounded-xl border border-white/10"
                 />
               ))}
             </div>
@@ -70,7 +68,7 @@ export default function Projects() {
               variants={container}
               initial="hidden"
               animate="show"
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"
             >
               {projects.map((project) => (
                 <motion.div key={project.id} variants={item}>

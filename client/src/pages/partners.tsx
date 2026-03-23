@@ -39,9 +39,11 @@ export default function Partners() {
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-purple-500/50" />
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <div className="flex flex-wrap justify-center gap-8">
              {sponsorsData.map((sponsor, index) => (
-               <PartnerCard key={sponsor.name} data={sponsor} index={index} />
+               <div key={sponsor.name} className="w-full sm:max-w-sm">
+                 <PartnerCard data={sponsor} index={index} />
+               </div>
              ))}
           </div>
         </motion.div>

@@ -10,10 +10,9 @@ export function AnimatedTitle({ text, className = '' }: AnimatedTitleProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   
-  // Base brightness for desktop
-  const BASE_OPACITY = 0.7;
-  // Higher contrast for mobile display
-  const MOBILE_OPACITY = 0.8;
+  // Base brightness
+  const BASE_OPACITY = 0.9;
+  const MOBILE_OPACITY = 0.9;
 
   useEffect(() => {
     // Set initial state with appropriate brightness
@@ -72,7 +71,7 @@ export function AnimatedTitle({ text, className = '' }: AnimatedTitleProps) {
     >
       <h1 
         ref={titleRef}
-        className={`text-outline relative z-10 ${className} ${isHovered ? 'hovered' : ''}`}
+        className={`text-outline font-bold relative z-10 ${className} ${isHovered ? 'hovered' : ''}`}
       >
         {text}
       </h1>
