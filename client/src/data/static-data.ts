@@ -128,7 +128,7 @@ export const events: Event[] = [
     id: 0,
     title: "BlackSwan was born",
     description: "Our quantitative finance club was officially founded.",
-    date: "October 2024",
+    date: "March 2025",
     imageUrl: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f",
     instagramPostUrl: "https://www.instagram.com/blackswan_quants/",
     linkedinPostUrl: "https://www.linkedin.com/company/blackswan-quants"
