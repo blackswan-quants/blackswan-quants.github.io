@@ -7,7 +7,7 @@ export const projects: Project[] = [
     title: "Effect of FED on the market",
     description: "Analyzing the impact of FED's speeches on the Stock Market using Financial BERT",
     githubUrl: "https://github.com/quantfin-sfpolimi/cb-impact-nlps",
-    imageUrl: "",
+    pdfUrl: "",
     isComingSoon: false
   },
   {
@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: "Clustering in the S&P 500",
     description: "A Comprehensive Study using Time Series Analysis and Clustering Techniques",
     githubUrl: "https://github.com/quantfin-sfpolimi/dtwclustering_sp500",
-    imageUrl: "",
+    pdfUrl: "",
     isComingSoon: false
   },
   {
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     title: "Correlation-based prediction in the NASDAQ",
     description: "Relating Correlations and Granger Causality-driven Models for LSTM-based Stock Forecasting",
     githubUrl: "https://github.com/quantfin-sfpolimi/nasdaq_causal-analysis_lstm",
-    imageUrl: "",
+    pdfUrl: "",
     isComingSoon: false
   },
   {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     title: "RL In Trading",
     description: "Advanced reinforcement learning strategies for algorithmic trading in financial markets",
     githubUrl: "",
-    imageUrl: "",
+    pdfUrl: "",
     isComingSoon: true
   },
   {
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     title: "Fourier Option Pricing",
     description: "An exploration of option pricing models using Fourier transforms for enhanced speed and accuracy.",
     githubUrl: "https://github.com/blackswan-quants/FourierOptionPricing",
-    imageUrl: "",
+    pdfUrl: "project_papers/A_Low_Latency_FFT_Pricing_Architecture_with_Analytical_Greeks_in_C.pdf",
     isComingSoon: false
   },
   {
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     title: "Hurst pullback",
     description: "Analysis of the Hurst exponent to detect mean-reverting and trending patterns, and developing pullback trading strategies.",
     githubUrl: "https://github.com/blackswan-quants/hurst-pullback",
-    imageUrl: "",
+    pdfUrl: "",
     isComingSoon: false
   },
   {
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     title: "Market Regime HMM",
     description: "Using Hidden Markov Models to identify different market regimes and build adaptive trading algorithms.",
     githubUrl: "https://github.com/blackswan-quants/marketregime_hmm",
-    imageUrl: "",
+    pdfUrl: "project_papers/Market_Regime_Detector___Data_Report.pdf",
     isComingSoon: false
   },
   {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     title: "Intraday Momentum",
     description: "Research and backtesting of high-frequency momentum strategies on intraday market data.",
     githubUrl: "https://github.com/blackswan-quants/intraday-momentum",
-    imageUrl: "",
+    pdfUrl: "project_papers/BSQ_IntradayMom_Report.pdf",
     isComingSoon: false
   }
 ];

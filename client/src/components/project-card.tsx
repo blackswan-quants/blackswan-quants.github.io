@@ -112,7 +112,8 @@ export function ProjectCard({ project }: { project: Project }) {
               className="flex gap-2"
               variants={childVariants}
             >
-              {/*<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              {project.pdfUrl && project.pdfUrl !== "" && (
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
                   variant="outline" 
                   size="sm"
@@ -126,7 +127,8 @@ export function ProjectCard({ project }: { project: Project }) {
                   <FileText className="w-4 h-4 mr-2 relative z-10" />
                   <span className="relative z-10">PDF</span>
                 </Button>
-              </motion.div>*/}
+              </motion.div>
+            )}
               
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 

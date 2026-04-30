@@ -6,7 +6,7 @@ export const projectSchema = z.object({
   title: z.string(),
   description: z.string(),
   githubUrl: z.string(),
-  imageUrl: z.string(),
+  pdfUrl: z.string(),
   isComingSoon: z.boolean().default(false)
 });
 
