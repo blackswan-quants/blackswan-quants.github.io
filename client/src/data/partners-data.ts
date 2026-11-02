@@ -36,5 +36,13 @@ export const partnersData = [
     website: "https://nextleaders.forbes.it/",
     color: "text-red-400",
     borderColor: "hover:border-red-500/50"
+  },
+  {
+    name: "Connecto",
+    description: "An AI agent that helps students land interviews through networking: it finds people at their target companies and sends LinkedIn outreach from the student's own account.",
+    website: "https://connectodigital.com/",
+    linkedin: "https://www.linkedin.com/company/connecto-ai/",
+    color: "text-cyan-400",
+    borderColor: "hover:border-cyan-500/50"
   }
 ];

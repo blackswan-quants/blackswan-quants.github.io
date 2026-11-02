@@ -84,11 +84,15 @@ function PartnerCard({ data, index }: { data: any, index: number }) {
     >
       <div className="h-48 p-8 flex items-center justify-center bg-zinc-900/80 border-b border-zinc-800/50 relative overflow-hidden">
         <div className={`absolute inset-0 bg-gradient-to-b from-transparent to-zinc-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-        <img 
-          src={data.logo} 
-          alt={data.name} 
-          className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-transform duration-500 group-hover:scale-105 relative z-10"
-        />
+        {data.logo ? (
+          <img 
+            src={data.logo} 
+            alt={data.name} 
+            className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-transform duration-500 group-hover:scale-105 relative z-10"
+          />
+        ) : (
+          <span className={`text-3xl font-bold relative z-10 ${data.color}`}>{data.name}</span>
+        )}
       </div>
       
       <div className="p-6 flex flex-col flex-grow">
