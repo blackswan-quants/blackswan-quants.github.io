@@ -39,7 +39,7 @@ export const partnersData = [
   },
   {
     name: "Connecto",
-    description: "An AI agent that helps students land interviews through networking: it finds people at their target companies and sends LinkedIn outreach from the student's own account.",
+    description: "Connecto is the AI agent that gets you job interviews at the companies you choose by networking for you.",
     website: "https://connectodigital.com/",
     linkedin: "https://www.linkedin.com/company/connecto-ai/",
     color: "text-cyan-400",
