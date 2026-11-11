@@ -39,6 +39,8 @@ export const partnersData = [
   },
   {
     name: "Connecto",
+    logo: "sponsors_logo/connecto_logo.svg",
+    logoRounded: true,
     description: "Connecto is the AI agent that gets you job interviews at the companies you choose by networking for you.",
     website: "https://connectodigital.com/",
     linkedin: "https://www.linkedin.com/company/connecto-ai/",

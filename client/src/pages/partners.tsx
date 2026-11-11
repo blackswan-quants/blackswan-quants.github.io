@@ -88,7 +88,7 @@ function PartnerCard({ data, index }: { data: any, index: number }) {
           <img 
             src={data.logo} 
             alt={data.name} 
-            className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-transform duration-500 group-hover:scale-105 relative z-10"
+            className={`h-full object-contain opacity-90 ${data.logoRounded ? "w-auto rounded-2xl" : "w-full"} group-hover:opacity-100 transition-transform duration-500 group-hover:scale-105 relative z-10`}
           />
         ) : (
           <span className={`text-3xl font-bold relative z-10 ${data.color}`}>{data.name}</span>
